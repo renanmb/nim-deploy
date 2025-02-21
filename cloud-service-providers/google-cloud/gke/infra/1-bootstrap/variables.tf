@@ -25,3 +25,8 @@ variable "services" {
   default     = ["container.googleapis.com"]
   nullable    = false
 }
+
+variable "region" {
+  description = "The GCP region"
+  type        = string
+}

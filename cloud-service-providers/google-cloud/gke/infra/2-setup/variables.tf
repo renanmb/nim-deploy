@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#  Added project
+variable "project_id" {
+  description = "The GCP project ID"
+  type        = string
+}
+#  Added above
+
 variable "region" {
   type        = string
   description = "GCP project region or zone"

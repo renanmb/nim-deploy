@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ngc_api_key = "<NGC API Key>"
+ngc_api_key = "azVsMWUxcjU2cWY5ODIwajl0YjR1bTE2cWk6NmNiZDQ0MTMtN2E3NC00ZTI3LWE0YzMtM2JmYmEwM2UyYTJm"
 registry_server = "nvcr.io"
 repository      = "nvcr.io/nim/meta/llama3-8b-instruct"
 tag             = "1.0.0"

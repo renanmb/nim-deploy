@@ -31,6 +31,23 @@ locals {
   services = concat(local.default_services, var.services)
 }
 
+# # Added this
+# terraform {
+#   required_version = ">= 1.3.5"
+#   required_providers {
+#     google = {
+#       source  = "hashicorp/google"
+#       version = ">= 4.57.0"
+#     }
+#   }
+# }
+
+# provider "google" {
+#   project = var.project_id
+#   zone    = var.region
+# }
+# # trying to fix this
+
 resource "google_project_service" "nim_project_services" {
   for_each                   = toset(local.services)
   project                    = var.project_id

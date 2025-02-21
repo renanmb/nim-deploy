@@ -131,7 +131,25 @@ resource "null_resource" "kubectl_config" {
   depends_on = [module.gke-cluster]
 }
 
-provider "kubernetes" {
-  config_path = "~/.kube/config"
+# Alternatives to static file
+# provider "kubernetes" {
+#   config_path = "~/.kube/config"
+# }
+
+
+data "google_client_config" "default" {
+    # project_id = var.project_id
+}
+data "google_container_cluster" "my_cluster" {
+  name     = var.cluster_name
+  project = var.project_id
+#   location = "us-west1"
+  location = var.cluster_location
+  depends_on = [module.gke-cluster]
 }
 
+provider "kubernetes" {
+  host                   = "https://${data.google_container_cluster.my_cluster.endpoint}"
+  token                  = data.google_client_config.default.access_token
+  cluster_ca_certificate = base64decode(data.google_container_cluster.my_cluster.master_auth[0].cluster_ca_certificate)
+}

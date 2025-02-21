@@ -12,6 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# # Added this
+# terraform {
+#   required_version = ">= 1.3.5"
+#   required_providers {
+#     google = {
+#       source  = "hashicorp/google"
+#       version = ">= 4.57.0"
+#     }
+#   }
+# }
+
+# provider "google" {
+#   project = var.project_id
+# #   zone    = var.region
+# }
+# # trying to fix this
 
 module "bootstrap" {
   source     = "../terraform/modules/bootstrap"

@@ -12,17 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+project_id = "goat-nw-florida-conference"
 
 ##common variables
 cluster_name      = "nim-demo-gke"
-cluster_location  = "<GCP Zone for zonal cluster / GCP Region for regional cluster>"
+cluster_location  = "us-west1"
 autopilot_cluster = false ## true = autopilot cluster, false = standard cluster
 
 ## network values
 create_network    = true
 network_name      = "nim-demo-vpc"
 subnetwork_name   = "nim-demo-subnet"
-subnetwork_region = "<GCP region>"
+subnetwork_region = "us-west1"
 subnetwork_cidr   = "10.100.0.0/16"
 
 ## CPU node pool values

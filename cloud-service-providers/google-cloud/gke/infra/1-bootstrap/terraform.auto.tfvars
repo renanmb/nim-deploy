@@ -13,4 +13,6 @@
 # limitations under the License.
 
 
-project_id = "<Google Cloud Project ID>"
+project_id = "goat-nw-florida-conference"
+
+region  = "us-west1-a"
